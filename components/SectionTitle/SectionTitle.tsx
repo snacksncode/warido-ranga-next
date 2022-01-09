@@ -1,22 +1,24 @@
 import Paragraph from "@components/Paragraph";
 import classNames from "classnames";
-import { FC } from "react";
+import { CSSProperties, FC } from "react";
 import styles from "./SectionTitle.module.scss";
 
 interface Props {
   text: string;
   forceColor?: string;
   className?: string;
+  passRawChild?: boolean;
+  style?: CSSProperties;
 }
 
-const SectionTitle: FC<Props> = ({ text, forceColor, className, children }) => {
+const SectionTitle: FC<Props> = ({ text, forceColor, style, passRawChild, className, children }) => {
   const classes = classNames(styles.wrapper, {
     [className as string]: className != null,
   });
   return (
-    <div style={{ "--color": forceColor } as any} className={classes}>
+    <div style={{ ...style, "--color": forceColor } as any} className={classes}>
       <h2 className={styles.title}>{text}</h2>
-      {children && <Paragraph>{children}</Paragraph>}
+      {children && passRawChild ? children : <Paragraph>{children}</Paragraph>}
     </div>
   );
 };

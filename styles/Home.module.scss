@@ -55,6 +55,12 @@
         margin-bottom: 0.25rem;
       }
 
+      ul {
+        font-size: var(--fs-400);
+        margin-top: 0.5em;
+        padding-inline-start: 1rem;
+      }
+
       &__button {
         position: absolute;
         right: 1.25rem;

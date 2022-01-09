@@ -108,19 +108,12 @@ const About: NextPage = () => {
                 </h1>
                 <Paragraph>
                   Kancelaria Biegłych Rewidentów WARIDO AUDYT ASG SP. z o.o. świadczy usługi w zakresie badania
-                  sprawozdań finansowych, przeglądu ksiąg rachunkowych, badania planów przekształcenia oraz innych usług
-                  atestacyjnych wymienionych w ustawie z dnia 19 lipca 2019 roku o biegłych rewidentach, firmach
-                  audytorskich oraz nadzorze publicznym (Dz. U. z 2019 r. poz. 1571 z późn. zm.), ustawie z dnia 29
-                  września 1994 roku o rachunkowości (Dz.U. z 2019 r. poz. 351 z późn. zm.), ustawie z dnia 15 września
-                  2000 roku Kodeks Spółek Handlowych (Dz. U. z 2020 r. poz. 1526 z późn. zm.) oraz innych aktach
-                  prawnych. Świadczymy również usługi w zakresie sporządzania dokumentacji cen transferowych. Podmiot
-                  powiązany specjalizuje się w zakresie prowadzenia ksiąg rachunkowych oraz obsługi kadrowo-płacowej.
+                  sprawozdań finansowych oraz audytu projektów unijnych.
                 </Paragraph>
                 <Paragraph>
                   Dbamy o wysoką jakość świadczonych usług, zachowanie tajemnicy informacji, obiektywizm i uczciwość.
                   Staramy się wykonywać swoją pracę z należytą starannością i profesjonalizmem, nieustannie podnosząc
-                  wiedzę i kompetencje. Przestrzegamy Kodeksu etyki zawodowych księgowych Międzynarodowej Federacji
-                  Księgowych („Kodeks IFAC”).
+                  wiedzę i kompetencje.
                 </Paragraph>
               </div>
             </div>
@@ -161,14 +154,9 @@ const About: NextPage = () => {
                   Od 2006 r. posiadamy doświadczenie w prowadzeniu ksiąg rachunkowych oraz spraw kadrowych zarówno w
                   podmiotach krajowych, jak i o kapitale zagranicznym. W tym samym roku rozpoczęliśmy również proces
                   zdobywania wiedzy praktycznej i teoretycznej z dziedziny rewizji finansowej oraz innych usług
-                  świadczonych przez biegłego rewidenta. Posiadamy wieloletnie doświadczenie w zakresie badania
-                  sprawozdań finansowych, planów przekształcenia, przeglądzie ksiąg rachunkowych oraz w sporządzaniu
-                  dokumentacji cen transferowych. Świadczymy usługi doradcze w sprawach ekonomiczno-finansowych i
-                  podatkowych.
-                </Paragraph>
-                <Paragraph>
-                  Wszystkie usługi świadczymy z zachowaniem tajemnicy informacji, zgodnie z ustawą o biegłych
-                  rewidentach, kodeksem etyki zawodowej oraz ustawą o ochronie danych osobowych.
+                  świadczonych przez biegłego rewidenta. Posiadamy wieloletnie doświadczenie w zakresie badania planów
+                  przekształcenia, przeglądzie ksiąg rachunkowych oraz w sporządzaniu dokumentacji cen transferowych.
+                  Świadczymy usługi doradcze w sprawach ekonomiczno-finansowych i podatkowych.
                 </Paragraph>
               </div>
             </div>

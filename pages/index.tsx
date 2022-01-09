@@ -38,31 +38,44 @@ const Home: NextPage = () => {
         <Hero />
 
         <section className={styles.about} id="about">
-          <SectionTitle text="O Nas">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua
+          <SectionTitle passRawChild style={{ "--ch-limit": "80ch" } as any} text="O Nas">
+            <Paragraph>
+              Od 2006 r. posiadamy doświadczenie w prowadzeniu ksiąg rachunkowych oraz spraw kadrowych zarówno w
+              podmiotach krajowych, jak i o kapitale zagranicznym.
+            </Paragraph>
+            <Paragraph>
+              Nasze usługi świadczymy z zachowaniem tajemnicy informacji, zgodnie z ustawą o biegłych rewidentach oraz
+              ustawą o ochronie danych osobowych. Przestrzegamy Kodeksu etyki zawodowych księgowych Międzynarodowej
+              Federacji Księgowych („Kodeks IFAC”).
+            </Paragraph>
           </SectionTitle>
           <div className={styles.about__grid}>
             <div className={styles.item}>
               <h3 className={styles.item__title}>Kim jesteśmy?</h3>
               <Paragraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua
+                Firmy Usługi Księgowe i Audytorskie „RANGA” oraz Warido Audyt ASG Sp. z o.o. z siedzibą w Bielsku-Białej
+                zostały założone przez biegłego rewidenta - Angelikę Sadłoń-Grabską - w rejestrze biegłych rewidentów nr
+                12610
               </Paragraph>
             </div>
             <div className={styles.item}>
               <h3 className={styles.item__title}>Co robimy?</h3>
               <Paragraph>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur
+                W firmie RANGA specjalizujemy się w obsłudze księgowej i kadrowej podmiotów gospodarczych. Świadczymy
+                usługi zastrzeżone w Kodeksie Spółek Handlowych dla biegłego rewidenta. Sporządzamy dokumentację cen
+                transferowych. Świadczymy usługi w zakresie analiz finansowych.
+              </Paragraph>
+              <Paragraph>
+                W firmie Warido Audyt ASG specjalizujemy się w badaniach sprawozdań finansowych oraz audytach projektów
+                unijnych.
               </Paragraph>
             </div>
             <div className={styles.item}>
               <h3 className={styles.item__title}>Jak możemy pomóc?</h3>
               <Paragraph>
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                Staramy się służyć naszym klientom wiedzą i doświadczeniem. System ciągłego podnoszenia kompetencji
+                kadry księgowej, wdrażanie systemu ISO 9001, pozwala nam zapewnić wysoką jakość świadczonych przez nas
+                usług.
               </Paragraph>
             </div>
           </div>
@@ -72,9 +85,7 @@ const Home: NextPage = () => {
         </section>
 
         <section className={styles.services} id="services">
-          <SectionTitle text="Usługi">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, tempor incididunt ut labore et dolore magna aliqua
-          </SectionTitle>
+          <SectionTitle text="Usługi">Jesteśmy dla Państwa w następujących obszarach:</SectionTitle>
           <IconContext.Provider value={{ size: 36, color: "var(--clr-accent)" }}>
             <MediaContextProvider>
               <div className={styles.services__grid}>
@@ -83,7 +94,7 @@ const Home: NextPage = () => {
                     <BookBookmark />
                     <div>
                       <h2 className={styles.item__title}>Usługi Audytorskie</h2>
-                      <Media lessThan="lg">
+                      {/* <Media lessThan="lg">
                         <Paragraph>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Paragraph>
                         <Button className={styles.item__button} size="small" icon={ArrowRight}>
                           Więcej
@@ -93,7 +104,7 @@ const Home: NextPage = () => {
                         <Paragraph>Świadczymy usługi w zakresie:</Paragraph>
                         <ul>
                           <li>Badanie sprawozdań fiansowych</li>
-                          <li>Badanie planów przekrztałcenia</li>
+                          <li>Badanie planów przekształcenia</li>
                           <li>Badanie planów połączenia</li>
                           <li>Audyt projektów unijnych</li>
                           <li>Analizy finansowe</li>
@@ -101,7 +112,18 @@ const Home: NextPage = () => {
                         <Button className={styles.item__button} size="small" icon={ArrowRight}>
                           Dowiedz się więcej
                         </Button>
-                      </Media>
+                      </Media> */}
+                      <Paragraph>Świadczymy usługi w zakresie:</Paragraph>
+                      <ul>
+                        <li>Badanie sprawozdań fiansowych</li>
+                        <li>Badanie planów przekształcenia</li>
+                        <li>Badanie planów połączenia</li>
+                        <li>Audyt projektów unijnych</li>
+                        <li>Analizy finansowe</li>
+                      </ul>
+                      <Button className={styles.item__button} size="small" icon={ArrowRight}>
+                        Dowiedz się więcej
+                      </Button>
                     </div>
                   </a>
                 </Link>
@@ -110,7 +132,7 @@ const Home: NextPage = () => {
                     <Checks />
                     <div>
                       <h2 className={styles.item__title}>Usługi Księgowe</h2>
-                      <Media lessThan="lg">
+                      {/* <Media lessThan="lg">
                         <Paragraph>Lorem ipsum dolor sit amet consectetur.</Paragraph>
                         <Button className={styles.item__button} size="small" icon={ArrowRight}>
                           Więcej
@@ -118,13 +140,16 @@ const Home: NextPage = () => {
                       </Media>
                       <Media greaterThan="md">
                         <Paragraph>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                          labore et dolore magna aliqua
+                          Prowadzenia ksiąg rachunkowych, ewidencji podatkowej oraz obsługi kadrowej.
                         </Paragraph>
                         <Button className={styles.item__button} size="small" icon={ArrowRight}>
                           Dowiedz się więcej
                         </Button>
-                      </Media>
+                      </Media> */}
+                      <Paragraph>Prowadzenia ksiąg rachunkowych, ewidencji podatkowej oraz obsługi kadrowej.</Paragraph>
+                      <Button className={styles.item__button} size="small" icon={ArrowRight}>
+                        Dowiedz się więcej
+                      </Button>
                     </div>
                   </a>
                 </Link>
@@ -133,7 +158,7 @@ const Home: NextPage = () => {
                     <UserCirclePlus />
                     <div>
                       <h2 className={styles.item__title}>Zakładanie spółek</h2>
-                      <Media lessThan="lg">
+                      {/* <Media lessThan="lg">
                         <Paragraph>Lorem ipsum dolor sit amet.</Paragraph>
                         <Button className={styles.item__button} size="small" icon={ArrowRight}>
                           Więcej
@@ -141,13 +166,20 @@ const Home: NextPage = () => {
                       </Media>
                       <Media greaterThan="md">
                         <Paragraph>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                          labore et dolore magna aliqua
+                          Dla klientów naszego biura rachunkowego nieodpłatnie służymy wiedzą i pomocą w założeniu
+                          spółki w portalu S24.
                         </Paragraph>
                         <Button className={styles.item__button} size="small" icon={ArrowRight}>
                           Dowiedz się więcej
                         </Button>
-                      </Media>
+                      </Media> */}
+                      <Paragraph>
+                        Dla klientów naszego biura rachunkowego nieodpłatnie służymy wiedzą i pomocą w założeniu spółki
+                        w portalu S24.
+                      </Paragraph>
+                      <Button className={styles.item__button} size="small" icon={ArrowRight}>
+                        Dowiedz się więcej
+                      </Button>
                     </div>
                   </a>
                 </Link>
@@ -156,7 +188,7 @@ const Home: NextPage = () => {
                     <CurrencyCircleDollar />
                     <div>
                       <h2 className={styles.item__title}>Dokumentacja cen transferowych</h2>
-                      <Media lessThan="lg">
+                      {/* <Media lessThan="lg">
                         <Paragraph>Lorem ipsum dolor sit amet.</Paragraph>
                         <Button className={styles.item__button} size="small" icon={ArrowRight}>
                           Więcej
@@ -164,13 +196,20 @@ const Home: NextPage = () => {
                       </Media>
                       <Media greaterThan="md">
                         <Paragraph>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                          labore et dolore magna aliqua
+                          Posiadamy wieloletnie w zakresie sporządzania lokalnej dokumentacji cen transferowych oraz
+                          analiz porównawczych (benchmarkingów).
                         </Paragraph>
                         <Button className={styles.item__button} size="small" icon={ArrowRight}>
                           Dowiedz się więcej
                         </Button>
-                      </Media>
+                      </Media> */}
+                      <Paragraph>
+                        Posiadamy wieloletnie w zakresie sporządzania lokalnej dokumentacji cen transferowych oraz
+                        analiz porównawczych (benchmarkingów).
+                      </Paragraph>
+                      <Button className={styles.item__button} size="small" icon={ArrowRight}>
+                        Dowiedz się więcej
+                      </Button>
                     </div>
                   </a>
                 </Link>

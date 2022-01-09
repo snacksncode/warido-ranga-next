@@ -23,6 +23,9 @@
   }
   p {
     margin: 0;
-    max-width: 60ch;
+    max-width: var(--ch-limit, 60ch);
+    & + p {
+      margin-top: 0 !important;
+    }
   }
 }

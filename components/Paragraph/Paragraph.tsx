@@ -1,16 +1,21 @@
 import classNames from "classnames";
-import { FC } from "react";
+import { CSSProperties, FC } from "react";
 import styles from "./Paragraph.module.scss";
 
 interface Props {
   className?: string;
+  style?: CSSProperties;
 }
 
-const Paragraph: FC<Props> = ({ children, className }) => {
+const Paragraph: FC<Props> = ({ children, style, className }) => {
   const classes = classNames(styles.wrapper, {
     [className as string]: className != null,
   });
-  return <p className={classes}>{children}</p>;
+  return (
+    <p style={style} className={classes}>
+      {children}
+    </p>
+  );
 };
 
 export default Paragraph;

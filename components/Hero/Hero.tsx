@@ -16,8 +16,7 @@ const Hero: FC = () => {
         <div className={styles.floating_card}>
           <h1 className={styles.heading}>Świadczymy profesjonalne usługi księgowe</h1>
           <Paragraph className={styles.subheading}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua
+            Służymy naszym klientom wykształconą kadrą księgową, doświadczeniem, wiedzą i indywidualnym podejściem.
           </Paragraph>
           <Media at="xs">
             <div className={styles.buttons}>

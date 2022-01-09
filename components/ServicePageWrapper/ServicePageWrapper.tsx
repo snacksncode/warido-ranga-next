@@ -16,11 +16,12 @@ interface Props {
   image: StaticImageData;
   title: string;
   serviceId: "s-ks" | "s-au" | "s-zk" | "s-dok";
-  firm: "ranga" | "warido";
+  firm: "ranga" | "warido" | "both";
   subtitle?: ReactNode;
+  passRawSubtitle?: boolean;
 }
 
-const ServicePageWrapper: FC<Props> = ({ image, title, subtitle, serviceId, children, firm }) => {
+const ServicePageWrapper: FC<Props> = ({ image, title, subtitle, serviceId, passRawSubtitle, children, firm }) => {
   const firmLogo = firm === "ranga" ? ranga : warido;
   return (
     <>
@@ -34,7 +35,7 @@ const ServicePageWrapper: FC<Props> = ({ image, title, subtitle, serviceId, chil
         <div className={styles.background} />
         <div className={classNames(styles.wrapper, "service-page-content")}>
           <Media at="xs">
-            <SectionTitle className={styles.title} text={title}>
+            <SectionTitle passRawChild={passRawSubtitle} className={styles.title} text={title}>
               {subtitle}
             </SectionTitle>
           </Media>
@@ -50,9 +51,21 @@ const ServicePageWrapper: FC<Props> = ({ image, title, subtitle, serviceId, chil
               loading="eager"
               alt={`background image - ${title}`}
             />
-            <div className={styles.logo}>
-              <Image src={firmLogo} alt={firm} />
-            </div>
+            {firm !== "both" ? (
+              <div className={styles.logo}>
+                <Image src={firmLogo} alt={firm} sizes="100px" />
+              </div>
+            ) : (
+              <div style={{ display: "flex", gap: "1.25rem" }}>
+                <div className={classNames(styles.logo, styles.logo__both)}>
+                  <Image src={ranga} alt="ranga" objectFit="contain" sizes="100px" />
+                </div>
+
+                <div className={classNames(styles.logo, styles.logo__both)}>
+                  <Image src={warido} className={styles.warido} alt="warido" objectFit="contain" sizes="100px" />
+                </div>
+              </div>
+            )}
           </div>
           <Media className={styles.subtitle} greaterThan="xs">
             {subtitle}

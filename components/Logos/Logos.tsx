@@ -55,27 +55,25 @@ const Logos: FC<Props> = ({ white }) => {
           />
         </Media>
         <div className={classNames(styles.separator, { [styles["separator--white"]]: white })} />
-        <Media at="xs">
+        <Media className={styles.logo_width_fix_small} at="xs">
           <Image
             width={94.4}
             height={25}
             src={white ? waridoWhite : warido}
             layout="fixed"
-            placeholder="blur"
             loading="eager"
             priority={true}
             alt="Warido"
             draggable={false}
           />
         </Media>
-        <Media greaterThan="xs">
+        <Media className={styles.logo_width_fix} greaterThan="xs">
           <Image
             width={136}
             height={36}
             src={white ? waridoWhite : warido}
-            layout="fixed"
-            placeholder="blur"
             loading="eager"
+            sizes="136px"
             priority={true}
             alt="Warido"
             draggable={false}

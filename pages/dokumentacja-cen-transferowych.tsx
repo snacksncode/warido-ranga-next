@@ -14,7 +14,7 @@ const UslugiAudytorskie: NextPage = () => {
       <ServicePageWrapper
         title="Dokumentacja cen transferowych"
         subtitle={
-          <Paragraph>
+          <Paragraph style={{ marginBottom: "2rem" }}>
             Do sporządzania dokumentacji cen transferowych, zgodnie z porządkiem prawnym obowiązującym od 2019 roku, są
             zobowiązane podmioty, których transakcje kontrolowane o jednorodnym charakterze z podmiotami powiązanymi
             przekraczają określone progi (w wartościach netto - pomniejszone o podatek od towarów i usług). Progi te są
@@ -23,8 +23,9 @@ const UslugiAudytorskie: NextPage = () => {
             podatkowych.
           </Paragraph>
         }
+        passRawSubtitle
         image={featuredImage}
-        firm="warido"
+        firm="ranga"
         serviceId="s-dok"
       >
         <ServiceHeading>Progi dokumentacyjne są ustalane odrębnie dla</ServiceHeading>
