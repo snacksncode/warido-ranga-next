@@ -1,0 +1,29 @@
+.wrapper {
+  margin-block: 5rem 2rem;
+  .grid {
+    margin-top: 3rem;
+    display: flex;
+    margin-left: -30px; /* gutter size offset */
+    width: auto;
+
+    &__column {
+      padding-left: 30px; /* gutter size */
+      background-clip: padding-box;
+    }
+
+    &__column > div {
+      /* change div to reference your elements you put in <Masonry> */
+      display: flex;
+      border-radius: var(--br-normal);
+      overflow: hidden;
+      box-shadow: var(--shadow-small);
+      will-change: transform;
+      // border: 1px solid rgba(0, 0, 0, 0.5);
+      margin-bottom: 30px;
+      transition: transform 200ms ease;
+      &:hover {
+        transform: translateY(-10px);
+      }
+    }
+  }
+}

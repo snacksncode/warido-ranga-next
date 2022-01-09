@@ -1,0 +1,105 @@
+.wrapper {
+  .hero {
+    position: relative;
+    margin-top: 4rem;
+    .heading {
+      font-family: var(--ff-serif);
+      line-height: 100%;
+      font-size: var(--fs-900);
+      max-width: 15ch;
+      margin-bottom: 2rem;
+    }
+    p {
+      max-width: 60ch;
+    }
+    .buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .right_ball {
+      top: -175px;
+      right: -150px;
+      opacity: 0.5 !important;
+    }
+    .left_ball {
+      left: -150px;
+      bottom: 0px;
+    }
+  }
+  .firm_info {
+    margin-top: 5.75rem;
+    margin-bottom: 2rem;
+    .tags {
+      display: flex;
+      margin-top: 1rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .contact {
+      display: grid;
+      gap: 1rem;
+      margin-block: 1.25rem 1.5rem;
+    }
+    .content {
+      &__title {
+        font-size: var(--fs-700);
+        margin-block: 2rem 1.5rem;
+        line-height: 100%;
+        color: var(--clr-accent);
+        span {
+          line-height: 130%;
+          margin-top: 0.5rem;
+          font-size: var(--fs-500);
+          display: block;
+        }
+      }
+      p {
+        max-width: 120ch;
+      }
+    }
+    .warido {
+      margin-top: 2.25rem;
+    }
+    .ranga {
+      margin-top: 4rem;
+      .content__title {
+        max-width: 40ch;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    .hero {
+      margin-top: 5rem;
+      display: grid;
+      grid-template-columns: 1fr minmax(350px, 1fr);
+      align-items: center;
+      .art {
+        max-width: 550px;
+        min-width: 75%;
+        margin-inline: auto;
+        display: block;
+      }
+      .left_ball {
+        bottom: -50px;
+        left: -150px;
+      }
+      .right_ball {
+        top: 0px;
+      }
+    }
+    .firm_info {
+      .content__title {
+        font-size: var(--fs-800);
+      }
+    }
+    .team {
+      margin-block: 4rem 2rem;
+    }
+  }
+}

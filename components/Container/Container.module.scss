@@ -1,0 +1,15 @@
+.wrapper {
+  width: 100%;
+  max-width: var(--max-width);
+  padding-inline: 1.5rem;
+  margin-inline: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 800px) {
+  .wrapper {
+    padding-inline: 2.5rem;
+  }
+}

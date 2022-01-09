@@ -1,0 +1,66 @@
+@use "partials/reset";
+@import "partials/variables";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  font-family: var(--ff-sans);
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#__next {
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.service-page-content {
+  ul {
+    li {
+      font-size: var(--fs-400);
+      line-height: 150%;
+      & + li {
+        margin-top: 1rem;
+      }
+    }
+    & + p {
+      margin-top: 1.5em;
+    }
+    ul {
+      margin-top: 1rem;
+    }
+  }
+  hr {
+    background-color: #c4c4c4;
+    height: 1px;
+    opacity: 0.25;
+    width: min(520px, 90%);
+    margin-inline: auto;
+    margin-block: 3rem 4rem;
+  }
+}

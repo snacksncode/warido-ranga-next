@@ -1,0 +1,17 @@
+.wrapper {
+  background-color: var(--clr-accent);
+  color: var(--clr-text-light);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1.75rem;
+  align-items: center;
+  justify-content: center;
+
+  .heading {
+    line-height: 120%;
+    font-size: var(--fs-800);
+    font-family: var(--ff-serif);
+  }
+}

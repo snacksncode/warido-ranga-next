@@ -1,0 +1,7 @@
+.wrapper {
+  font-size: var(--fs-400);
+  line-height: 150%;
+  & + .wrapper {
+    margin-top: 1em;
+  }
+}

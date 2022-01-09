@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: fit-content;
+  .title {
+    position: relative;
+    margin: 0;
+    line-height: 1;
+    font-family: var(--ff-serif);
+    color: var(--color, --clr-text-dark);
+    font-size: var(--fs-800);
+    &::after {
+      content: "";
+      width: 75px;
+      height: 4px;
+      border-radius: var(--br-pill);
+      background-color: var(--color, #500e19);
+      top: -0.75rem;
+      left: 0;
+      position: absolute;
+    }
+  }
+  p {
+    margin: 0;
+    max-width: 60ch;
+  }
+}

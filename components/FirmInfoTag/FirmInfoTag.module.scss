@@ -1,0 +1,12 @@
+.wrapper {
+  padding: 0.5rem 0.75rem;
+  background-color: hsla(350, 69%, 23%, 20%);
+  color: var(--clr-accent);
+  border-radius: var(--br-normal);
+  display: inline-flex;
+  gap: 0.5rem;
+  font-size: var(--fs-300);
+  .value {
+    font-weight: 700;
+  }
+}

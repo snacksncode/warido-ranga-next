@@ -1,0 +1,29 @@
+.wrapper {
+  background-color: var(--clr-accent-dark);
+  color: var(--clr-text-light);
+  padding: 2.25rem;
+  .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .text {
+    font-size: var(--fs-300);
+    text-align: center;
+    a {
+      font-weight: 700;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    .inner {
+      flex-direction: row;
+      justify-content: space-between;
+      .text {
+        text-align: right;
+      }
+    }
+  }
+}
