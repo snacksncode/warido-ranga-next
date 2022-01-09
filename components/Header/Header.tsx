@@ -32,7 +32,11 @@ const Header: FC<Props> = ({ activeMenuItem }) => {
   return (
     <header className={styles.wrapper}>
       <MediaContextProvider>
-        <Logos />
+        <Link href="/">
+          <a>
+            <Logos />
+          </a>
+        </Link>
         <Media at="xs">
           <button
             aria-label="Otwórz menu"
