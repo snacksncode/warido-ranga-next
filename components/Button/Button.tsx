@@ -1,8 +1,7 @@
-import { FC, ForwardRefExoticComponent, MouseEventHandler } from "react";
+import { CSSProperties, FC, ForwardRefExoticComponent, MouseEventHandler } from "react";
 import classNames from "classnames";
 import styles from "./Button.module.scss";
 import { IconProps, CircleNotch } from "phosphor-react";
-import { motion, MotionStyle } from "framer-motion";
 import Link from "next/link";
 
 interface Props {
@@ -15,7 +14,7 @@ interface Props {
   size?: "normal" | "small";
   loading?: boolean;
   fillIcon?: boolean;
-  style?: MotionStyle;
+  style?: CSSProperties;
 }
 
 // TODO: Optimize shadows, (i guess max 2-3 layers)
@@ -43,22 +42,22 @@ const Button: FC<Props> = ({
   if (linkTo) {
     return (
       <Link href={linkTo} passHref>
-        <motion.a style={style} onClick={onClick} className={classes}>
+        <a style={style} onClick={onClick} className={classes}>
           {children}
           <Icon weight={fillIcon ? "fill" : "bold"} color="currentColor" size={size === "normal" ? 24 : 16} />
-        </motion.a>
+        </a>
       </Link>
     );
   }
   return (
-    <motion.button style={style} type={type} onClick={onClick} className={classes}>
+    <button style={style} type={type} onClick={onClick} className={classes}>
       {children}
       {loading === true ? (
         <CircleNotch className={styles.spinner} weight="bold" color="currentColor" size={size === "normal" ? 24 : 16} />
       ) : (
         <Icon weight={fillIcon ? "fill" : "bold"} color="currentColor" size={size === "normal" ? 24 : 16} />
       )}
-    </motion.button>
+    </button>
   );
 };
 

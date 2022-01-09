@@ -1,7 +1,6 @@
 import Button from "@components/Button";
 import Logos from "@components/Logos";
 import classNames from "classnames";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   BookBookmark,
@@ -49,21 +48,7 @@ const Header: FC<Props> = ({ activeMenuItem }) => {
             size: 28,
           }}
         >
-          <motion.nav
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              visibility: "visible",
-              opacity: menuOpened ? 1 : 0,
-              y: menuOpened ? 0 : 20,
-              transition: { type: "spring", duration: 0.35 },
-              transitionEnd: {
-                visibility: menuOpened ? "visible" : "hidden",
-              },
-            }}
-            className={classNames(styles.nav, { [styles["nav--opened"]]: menuOpened })}
-          >
+          <nav className={classNames(styles.nav, { [styles["nav--opened"]]: menuOpened })}>
             <ul className={styles.nav__list}>
               <li data-active={activeMenuItem === "home"} className={styles.nav__item}>
                 <Link passHref href="/">
@@ -170,7 +155,7 @@ const Header: FC<Props> = ({ activeMenuItem }) => {
                 Kontakt
               </Button>
             </ul>
-          </motion.nav>
+          </nav>
         </IconContext.Provider>
       </MediaContextProvider>
     </header>

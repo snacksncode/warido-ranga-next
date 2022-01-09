@@ -13,7 +13,6 @@ import cert5 from "public/assets/certificates/5.png";
 import cert6 from "public/assets/certificates/6.jpg";
 import cert7 from "public/assets/certificates/7.jpg";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 const certificates = [cert1, cert2, cert3, cert4, cert5, cert6, cert7];
 
