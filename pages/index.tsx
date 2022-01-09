@@ -78,11 +78,11 @@ const Home: NextPage = () => {
           <IconContext.Provider value={{ size: 36, color: "var(--clr-accent)" }}>
             <MediaContextProvider>
               <div className={styles.services__grid}>
-                <Link href="/about">
+                <Link href="/uslugi-audytorskie">
                   <a draggable="false" className={styles.item}>
                     <BookBookmark />
                     <div>
-                      <h4 className={styles.item__title}>Usługi Audytorskie</h4>
+                      <h2 className={styles.item__title}>Usługi Audytorskie</h2>
                       <Media lessThan="lg">
                         <Paragraph>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Paragraph>
                         <Button className={styles.item__button} size="small" icon={ArrowRight}>
@@ -105,11 +105,11 @@ const Home: NextPage = () => {
                     </div>
                   </a>
                 </Link>
-                <Link href="/about">
+                <Link href="/uslugi-ksiegowe">
                   <a draggable="false" className={styles.item}>
                     <Checks />
                     <div>
-                      <h4 className={styles.item__title}>Usługi Księgowe</h4>
+                      <h2 className={styles.item__title}>Usługi Księgowe</h2>
                       <Media lessThan="lg">
                         <Paragraph>Lorem ipsum dolor sit amet consectetur.</Paragraph>
                         <Button className={styles.item__button} size="small" icon={ArrowRight}>
@@ -128,11 +128,11 @@ const Home: NextPage = () => {
                     </div>
                   </a>
                 </Link>
-                <Link href="/about">
+                <Link href="/zakladanie-spolek">
                   <a draggable="false" className={styles.item}>
                     <UserCirclePlus />
                     <div>
-                      <h4 className={styles.item__title}>Zakładanie spółek</h4>
+                      <h2 className={styles.item__title}>Zakładanie spółek</h2>
                       <Media lessThan="lg">
                         <Paragraph>Lorem ipsum dolor sit amet.</Paragraph>
                         <Button className={styles.item__button} size="small" icon={ArrowRight}>
@@ -151,11 +151,11 @@ const Home: NextPage = () => {
                     </div>
                   </a>
                 </Link>
-                <Link href="/about">
+                <Link href="/dokumentacja-cen-transferowych">
                   <a draggable="false" className={styles.item}>
                     <CurrencyCircleDollar />
                     <div>
-                      <h4 className={styles.item__title}>Dokumentacja cen transferowych</h4>
+                      <h2 className={styles.item__title}>Dokumentacja cen transferowych</h2>
                       <Media lessThan="lg">
                         <Paragraph>Lorem ipsum dolor sit amet.</Paragraph>
                         <Button className={styles.item__button} size="small" icon={ArrowRight}>

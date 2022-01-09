@@ -35,6 +35,7 @@ const Header: FC<Props> = ({ activeMenuItem }) => {
         <Logos />
         <Media at="xs">
           <button
+            aria-label="Otwórz menu"
             className={classNames(styles.hamburger, { [styles["hamburger--close"]]: menuOpened })}
             onClick={toggleMenu}
           >
@@ -144,16 +145,18 @@ const Header: FC<Props> = ({ activeMenuItem }) => {
                   </ul>
                 </div>
               </li>
-              <Button
-                linkTo="/#contact"
-                onClick={closeMenu}
-                icon={Phone}
-                fillIcon
-                className={styles.contact}
-                size="small"
-              >
-                Kontakt
-              </Button>
+              <li style={{ display: "flex" }}>
+                <Button
+                  linkTo="/#contact"
+                  onClick={closeMenu}
+                  icon={Phone}
+                  fillIcon
+                  className={styles.contact}
+                  size="small"
+                >
+                  Kontakt
+                </Button>
+              </li>
             </ul>
           </nav>
         </IconContext.Provider>

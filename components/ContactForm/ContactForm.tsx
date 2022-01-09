@@ -98,6 +98,7 @@ const ContactForm: FC<Props> = ({}) => {
             rules={{ required: true, pattern: /\(\+48\)\s\d{3}\s\d{3}\s\d{3}/ }}
             render={({ field: { onChange, onBlur } }) => (
               <MaskedInput
+                id="phone"
                 onBlur={onBlur} // notify when input is touched
                 onChange={onChange} // send value to hook form
                 mask={["(", "+", "4", "8", ")", " ", /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/]}
