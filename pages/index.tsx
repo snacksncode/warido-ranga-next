@@ -20,7 +20,6 @@ import {
   MapPin,
   Phone,
   PhoneCall,
-  Placeholder,
   UserCirclePlus,
 } from "phosphor-react";
 import styles from "styles/Home.module.scss";

@@ -1,10 +1,7 @@
-import Container from "@components/Container";
-import Header from "@components/Header";
 import ServicePageWrapper from "@components/ServicePageWrapper";
 import type { NextPage } from "next";
 import Head from "next/head";
 import featuredImage from "public/assets/ksiegowe.jpg";
-import Paragraph from "@components/Paragraph";
 import ServiceHeading from "@components/ServiceHeading";
 
 const UslugiKsiegowe: NextPage = () => {
