@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+  .x {
+    margin-left: auto;
+    padding: 0.25rem;
+    height: 100%;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+}

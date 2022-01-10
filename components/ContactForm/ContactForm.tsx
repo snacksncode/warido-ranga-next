@@ -1,11 +1,12 @@
 import Button from "@components/Button";
 import { Checks, PaperPlaneTilt, Warning } from "phosphor-react";
-import { createRef, FC, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import styles from "./ContactForm.module.scss";
 import MaskedInput from "react-text-mask";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
+import Alert from "@components/Alert";
 
 interface Props {}
 
@@ -19,8 +20,8 @@ interface FormData {
 
 const ContactForm: FC<Props> = ({}) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSent, setIsSent] = useState(false);
-  const [isError, setIsError] = useState(false);
+  const [isSent, setIsSent] = useState(true);
+  const [isError, setIsError] = useState(true);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const {
@@ -117,16 +118,23 @@ const ContactForm: FC<Props> = ({}) => {
       </Button>
       <ReCAPTCHA ref={recaptchaRef} size="invisible" sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string} />
       {isSent === true && (
-        <p className={styles.success}>
-          <Checks weight="bold" size={30} /> E-Mail został wysłany. Skontaktujemy się z tobą w najbliższym czasie
-        </p>
+        // <p className={styles.success}>
+        //   <Checks weight="bold" size={30} /> E-Mail został wysłany. Skontaktujemy się z tobą w najbliższym czasie
+        // </p>
+        <Alert className={styles.success} icon={Checks}>
+          E-Mail został wysłany. Skontaktujemy się z tobą w najbliższym czasie
+        </Alert>
       )}
       {isError === true && (
-        <p className={styles.sent_error}>
-          <Warning weight="bold" size={30} />
+        // <p className={styles.sent_error}>
+        //   <Warning weight="bold" size={30} />
+        //   Wystąpił błąd w trakcie wysyłania twojej wiadomości. Spróbuj jeszcze raz później lub skontaktuj się z nami
+        //   bezpośrednio
+        // </p>
+        <Alert className={styles.sent_error} icon={Warning}>
           Wystąpił błąd w trakcie wysyłania twojej wiadomości. Spróbuj jeszcze raz później lub skontaktuj się z nami
           bezpośrednio
-        </p>
+        </Alert>
       )}
     </form>
   );

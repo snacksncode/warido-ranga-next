@@ -17,8 +17,6 @@ interface Props {
   style?: CSSProperties;
 }
 
-// TODO: Optimize shadows, (i guess max 2-3 layers)
-
 const Button: FC<Props> = ({
   children,
   icon: Icon,
