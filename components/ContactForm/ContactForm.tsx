@@ -20,8 +20,8 @@ interface FormData {
 
 const ContactForm: FC<Props> = ({}) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSent, setIsSent] = useState(true);
-  const [isError, setIsError] = useState(true);
+  const [isSent, setIsSent] = useState(false);
+  const [isError, setIsError] = useState(false);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const {
@@ -33,6 +33,8 @@ const ContactForm: FC<Props> = ({}) => {
   } = useForm<FormData>();
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
+    setIsSent(false);
+    setIsError(false);
     const captchaCode = await recaptchaRef.current?.executeAsync();
     if (!captchaCode) return;
     setIsSubmitting(true);
