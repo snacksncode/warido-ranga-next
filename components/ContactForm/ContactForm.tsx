@@ -1,10 +1,11 @@
 import Button from "@components/Button";
 import { Checks, PaperPlaneTilt, Warning } from "phosphor-react";
-import { FC, useState } from "react";
+import { createRef, FC, useRef, useState } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import styles from "./ContactForm.module.scss";
 import MaskedInput from "react-text-mask";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface Props {}
 
@@ -20,6 +21,7 @@ const ContactForm: FC<Props> = ({}) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [isError, setIsError] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const {
     register,
@@ -29,17 +31,10 @@ const ContactForm: FC<Props> = ({}) => {
     reset,
   } = useForm<FormData>();
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    const captchaCode = await recaptchaRef.current?.executeAsync();
+    if (!captchaCode) return;
     setIsSubmitting(true);
-    console.log("submitted", data);
-    const submitemail = prompt("submit?");
-    if (submitemail == null) return;
-
-    // setTimeout(() => {
-    //   setIsSent(true);
-    //   setIsSubmitting(false);
-    //   reset();
-    // }, 2000);
     emailjs
       .send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
@@ -49,6 +44,7 @@ const ContactForm: FC<Props> = ({}) => {
           email: data.email,
           phone: data.phone,
           message: data.message,
+          "g-recaptcha-response": captchaCode,
         },
         process.env.NEXT_PUBLIC_EMAILJS_USER
       )
@@ -116,10 +112,10 @@ const ContactForm: FC<Props> = ({}) => {
         <label htmlFor="message">Informacje dodatkowe</label>
         <textarea id="message" {...register("message")} />
       </div>
-      <div id="captcha_container" />
       <Button className={styles.button} loading={isSubmitting} type="submit" size="small" icon={PaperPlaneTilt}>
         Wyślij wiadomość
       </Button>
+      <ReCAPTCHA ref={recaptchaRef} size="invisible" sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string} />
       {isSent === true && (
         <p className={styles.success}>
           <Checks weight="bold" size={30} /> E-Mail został wysłany. Skontaktujemy się z tobą w najbliższym czasie
